@@ -1,4 +1,4 @@
 interface:
   display_name: "Language Tutor"
-  short_description: "Spoken language lessons with saved progress"
+  short_description: "Learn a language through conversation"
   default_prompt: "Use $language-tutor to start or continue my spoken language course."

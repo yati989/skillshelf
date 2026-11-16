@@ -1,6 +1,6 @@
 interface:
   display_name: "Library Structure Map"
-  short_description: "Map a code library's main parts"
+  short_description: "Find your way around a code library"
   default_prompt: "Use $structure-map to map this code library's main parts and how they fit together."
 policy:
   allow_implicit_invocation: false

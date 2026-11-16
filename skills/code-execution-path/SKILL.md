@@ -1,6 +1,6 @@
 ---
 name: code-execution-path
-description: Show any requested task as a concise, linked chain of its actual execution steps without explanation.
+description: "Follow a request or action through the code, step by step."
 ---
 
 # Code Execution Path

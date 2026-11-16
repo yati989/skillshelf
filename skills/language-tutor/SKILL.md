@@ -1,6 +1,6 @@
 ---
 name: language-tutor
-description: Plan and teach a persistent spoken-language course using an 80/20 curriculum, listening and conversation practice, conversational assignments, evidence-based assessments, and saved checkpoints. Use to start, resume, practise, or review this structured language-learning workflow; not for one-off translations or general explanations.
+description: "Learn to speak a language through guided lessons, conversation, and review. Use for a continuing spoken-language course, rather than a one-off translation."
 ---
 
 # Language Tutor

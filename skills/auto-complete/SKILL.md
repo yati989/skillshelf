@@ -1,6 +1,6 @@
 ---
 name: auto-complete
-description: Turn procedural comments, pseudocode, or messy, incomplete, and broken code into a complete corrected implementation. Use when the user wants working code end to end from a rough starting point, in their specified or clearly implied programming language.
+description: "Turn rough notes, pseudocode, or broken code into a working program."
 ---
 
 # Auto Complete

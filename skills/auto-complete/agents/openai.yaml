@@ -1,6 +1,6 @@
 interface:
   display_name: "Auto Complete"
-  short_description: "Turn rough comments or broken code into working code"
+  short_description: "Turn rough ideas into working code"
   default_prompt: "Use $auto-complete to turn my comments, pseudocode, or broken code into a complete working implementation in the language I specify, then explain how the code works."
 policy:
   allow_implicit_invocation: false

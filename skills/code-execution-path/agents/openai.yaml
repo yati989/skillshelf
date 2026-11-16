@@ -1,6 +1,6 @@
 interface:
   display_name: "Code Execution Path"
-  short_description: "Map a task to linked execution steps"
+  short_description: "Follow what happens in your code"
   default_prompt: "Use $code-execution-path to show the execution chain for this task."
 
 policy:

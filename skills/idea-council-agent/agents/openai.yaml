@@ -1,6 +1,6 @@
 interface:
   display_name: "Idea Council Agent"
-  short_description: "Challenge projects through four expert gates"
+  short_description: "Test an idea before investing in it"
   default_prompt: "Use $idea-council-agent to debate and evaluate my project idea through all four gates."
 
 policy:

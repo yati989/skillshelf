@@ -1,6 +1,6 @@
 interface:
   display_name: "Code File Tutor"
-  short_description: "Explain one code file clearly and practically"
+  short_description: "Understand one code file"
   default_prompt: "Use $tutor-code-file to explain this code file's purpose, execution flow, dependencies, risks, and safe change boundaries."
 
 policy:

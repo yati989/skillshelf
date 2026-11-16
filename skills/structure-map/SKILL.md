@@ -1,6 +1,6 @@
 ---
 name: structure-map
-description: Build a memorable conceptual map of a code library's main parts, core abstractions, relationships, and everyday entry points. Use when the user explicitly invokes the skill to understand a library such as scikit-learn without starting a lesson, course, or test.
+description: "Get an overview of a code library: its main parts, how they connect, and where to start. Use when explicitly invoked for a library overview, without starting a course or assessment."
 ---
 
 # Structure Map

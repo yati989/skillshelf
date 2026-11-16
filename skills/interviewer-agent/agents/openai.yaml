@@ -1,4 +1,4 @@
 interface:
   display_name: "Interviewer Agent"
-  short_description: "Concept-first interviews with transfer probes"
+  short_description: "Practise interviews and find gaps"
   default_prompt: "Use $interviewer-agent to conduct a seven-theme conceptual ML engineering interview."

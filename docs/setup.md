@@ -55,4 +55,4 @@ Installing skills does not initialize a profile or approve profile changes. Prof
 
 ## Updating
 
-Pull the new repository version, inspect the differences, and back up your installed skill before manually replacing it. The installer intentionally has no overwrite mode. Keep learner data outside installed skills so updates do not replace personal records. Job Atlas and Matt Pocock's installed skills are not managed by this collection.
+Pull the new repository version, inspect the differences, and back up your installed skill before manually replacing it. The installer intentionally has no overwrite mode. Keep learner data outside installed skills so updates do not replace personal records.

@@ -1,6 +1,6 @@
 ---
 name: personal-context
-description: Read and manage the user's single approval-gated personal profile across skills and workspaces. Use for manual reviews of a user-selected chat, set of lessons, date range, or files; when approved personal context materially improves a workflow; when the user asks what is remembered or requests a profile change; or at another skill's explicit adaptation-review gate.
+description: "Keep your goals and preferences available across sessions, with changes you approve. Use to retrieve relevant approved context or review profile changes requested by the user or another skill."
 ---
 
 # Personal Context

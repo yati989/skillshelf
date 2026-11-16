@@ -1,6 +1,6 @@
 ---
 name: code-concept-map
-description: Build a saved, interactive tree of programming, computer science, and software engineering concepts actually used in a code repository, with broad categories, nested sub-concepts, plain-language explanations, and source evidence. Use for repository concept maps, expandable learning trees, or exploring which concepts a codebase uses; not ordinary directory trees or architecture diagrams.
+description: "See which programming concepts a project uses in an interactive map."
 ---
 
 # Code Concept Map

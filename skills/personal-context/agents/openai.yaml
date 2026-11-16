@@ -1,4 +1,4 @@
 interface:
   display_name: "Personal Context"
-  short_description: "Use the approved global personal profile safely"
+  short_description: "Remember goals and preferences you approve"
   default_prompt: "Use my approved personal context when it materially improves this task."

@@ -1,6 +1,6 @@
 ---
 name: tutor-visual
-description: Visually explain code, modules, repositories, pipelines, architectures, data flow, runtime flow, dependencies, state transitions, database relationships, and conceptual relationships using the visualization best suited to the user's question. Ground all repository-specific diagrams in inspected code. Prefer small, high-value diagrams over exhaustive graphs. When useful, save durable diagrams into the same knowledge book maintained by tutor-codebase.
+description: "Understand code and systems through diagrams that show how the pieces work together."
 ---
 
 # Visual Tutor

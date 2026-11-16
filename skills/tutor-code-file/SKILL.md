@@ -1,6 +1,6 @@
 ---
 name: tutor-code-file
-description: Explain one code file through its purpose, structure, execution flow, important components, dependencies, state, risks, and safe change boundaries. Use when a developer wants to understand a specific file without analyzing the entire repository.
+description: "Understand what a code file does, how it works, and which parts matter. Use to explain one file, rather than tour an entire repository."
 ---
 
 # Code File Tutor

@@ -1,6 +1,6 @@
 ---
 name: interviewer-agent
-description: Conduct a concept-first mock interview across 6–8 prepared themes, using specific transfer probes and reference concept maps grounded in a role, category, supplied job description, resume, project, or topic. Use for live interview practice, not for numerical tests or study-guide generation.
+description: "Practise an interview for your role or project and get feedback on your answers. Use for live interview practice, rather than a written study guide."
 ---
 
 # Interviewer Agent

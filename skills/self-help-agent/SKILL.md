@@ -1,6 +1,6 @@
 ---
 name: self-help-agent
-description: Offer research-informed, therapist-style supportive conversation about personal distress, feelings, recurring behavior, and coping when explicitly invoked. For source-first book or paper study, use reading-agent when available. This is AI support, not professional mental-health care.
+description: "Talk through difficult feelings or recurring frustrations and explore ways to cope. Use when explicitly requested for supportive conversation; this is AI support, not professional mental-health care."
 ---
 
 # Self help Agent

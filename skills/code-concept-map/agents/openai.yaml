@@ -1,6 +1,6 @@
 interface:
   display_name: "Code Concept Map"
-  short_description: "Explore repository concepts in an interactive tree"
+  short_description: "Explore the concepts behind a project"
   default_prompt: "Use $code-concept-map to map the concepts used in this repository as a saved, interactive tree."
 
 policy:

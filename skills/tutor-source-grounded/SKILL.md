@@ -1,6 +1,6 @@
 ---
 name: tutor-source-grounded
-description: Build and use a persistent, per-subject evidence base to teach an application, question, phenomenon, or broad topic through personalized lessons and rigorous assessments. Use for starting or continuing this structured learning workflow; do not use for ordinary quick explanations that do not need corpus preparation or durable progress.
+description: "Study a subject using sources you choose, with a course plan, lessons, and tests. Use for structured learning with saved sources and progress, rather than a quick explanation."
 ---
 
 # Source-Grounded Tutor

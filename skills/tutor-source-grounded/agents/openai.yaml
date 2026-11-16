@@ -1,6 +1,6 @@
 interface:
   display_name: "Source-Grounded Tutor"
-  short_description: "Build evidence-based courses that learn with you"
+  short_description: "Study a subject with sources and a plan"
   default_prompt: "Use $tutor-source-grounded to start or continue a personalized, source-grounded learning track."
 
 policy:

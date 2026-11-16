@@ -1,6 +1,6 @@
 interface:
   display_name: "Student Agent"
-  short_description: "Learn by teaching a curious student"
+  short_description: "Learn by explaining a topic to a student"
   default_prompt: "Use $student-agent to help me master a concept by teaching it to you."
 
 policy:

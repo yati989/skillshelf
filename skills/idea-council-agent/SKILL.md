@@ -1,6 +1,6 @@
 ---
 name: idea-council-agent
-description: "Evaluate and debate a proposed project through a sequential adversarial council: Philosopher/Critic, Economics/Opportunity, Cost/Feasibility, then Technical Planner. Use when the user wants to pressure-test a project, startup, product, open-source effort, research direction, side project, or implementation idea before committing, or asks for a go/no-go decision, feasibility review, project debate, or staged expert critique."
+description: "Test a project idea from four angles: purpose, demand, cost, and how to build it."
 ---
 
 # Idea Council Agent

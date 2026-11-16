@@ -1,6 +1,6 @@
 ---
 name: tutor-plain-language
-description: Explain a short source or a clearly bounded part of a larger source in plain language calibrated to the user's demonstrated knowledge. Use for selected code or prose, short papers, small repositories, bounded excerpts from larger sources, diagrams, errors, claims, and earlier replies when the user asks what something is, means, does, is for, or how its parts fit; do not use for exhaustive long-source analysis, expert-only treatment, or requests primarily asking for implementation.
+description: "Get a clear explanation of code or text, with small examples you can follow. Use for a short source or a clearly limited part of a larger source."
 ---
 
 # Plain-Language Tutor

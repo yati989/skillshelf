@@ -1,6 +1,6 @@
 ---
 name: brainstorming-agent
-description: Brainstorm, pressure-test, develop, and decide on projects or ideas through an objective multi-turn conversation. Use when the user wants an independent view, alternatives, assumption checks, creative directions, trade-off analysis, or a decision—not mere encouragement, automatic disagreement, or immediate implementation.
+description: "Talk through an idea, compare your options, and decide what to try next."
 ---
 
 # Brainstorming Agent

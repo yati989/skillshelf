@@ -1,6 +1,6 @@
 ---
 name: student-agent
-description: Run learn-by-teaching sessions by role-playing an attentive, curious student who asks diagnostic questions until the user's explanation is conceptually sound. Use when the user wants to learn by teaching, requests a Feynman-style exercise, or asks Codex to act as their student; do not use for ordinary explanations, quizzes, or unrelated role-play.
+description: "Check your understanding by teaching a curious student who asks about gaps. Use for learning by teaching, rather than an ordinary explanation or quiz."
 ---
 
 # Student Agent

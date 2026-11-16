@@ -1,6 +1,6 @@
 ---
 name: reading-agent
-description: Read and discuss supplied text or PDFs in source-grounded chapter parts, using Markdown preparation and explicit coverage tracking. Use when explicitly invoked for companion reading, interpretation, or comparison of supplied works; no source discovery, assignments, or assessments.
+description: "Read a book or PDF together, discuss each part, and save where you stopped. Use when explicitly invoked for supplied books or passages, without courses or assessments."
 ---
 
 # Reading Agent

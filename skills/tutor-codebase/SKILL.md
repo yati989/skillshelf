@@ -1,6 +1,6 @@
 ---
 name: tutor-codebase
-description: Teach high-leverage software-engineering fundamentals from repository evidence, building on the learner's programming background and prior learning. Only after the learner says Done, curate the knowledge book and assess application. Use when explicitly invoked for conceptual learning or follow-ups in the same tutoring session, not ordinary implementation or code review alone.
+description: "Learn software engineering by exploring real code, with saved lessons and practice. Use when explicitly invoked for conceptual learning from a repository, rather than ordinary implementation or code review."
 ---
 
 # Codebase Tutor
