@@ -1,0 +1,7 @@
+interface:
+  display_name: "Idea Council Agent"
+  short_description: "Challenge projects through four expert gates"
+  default_prompt: "Use $idea-council-agent to debate and evaluate my project idea through all four gates."
+
+policy:
+  allow_implicit_invocation: false

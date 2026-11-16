@@ -1,0 +1,4 @@
+interface:
+  display_name: "Personal Context"
+  short_description: "Use the approved global personal profile safely"
+  default_prompt: "Use my approved personal context when it materially improves this task."

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Student Agent"
+  short_description: "Learn by teaching a curious student"
+  default_prompt: "Use $student-agent to help me master a concept by teaching it to you."
+
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "skills": [
+    {
+      "name": "auto-complete",
+      "category": "Coding",
+      "summary": "Turn comments, pseudocode, or broken code into a working implementation.",
+      "example": "Use $auto-complete to implement this pseudocode in Python and explain the result.",
+      "dependencies": [],
+      "runtime": null
+    },
+    {
+      "name": "brainstorming-agent",
+      "category": "Thinking",
+      "summary": "Explore ideas, test assumptions, and compare options through discussion.",
+      "example": "Use $brainstorming-agent to help me compare two approaches to my side project.",
+      "dependencies": [],
+      "runtime": null
+    },
+    {
+      "name": "code-concept-map",
+      "category": "Code understanding",
+      "summary": "Build an interactive tree of concepts actually used in a repository.",
+      "example": "Use $code-concept-map to map the engineering concepts in this repository.",
+      "dependencies": [],
+      "runtime": null
+    },
+    {
+      "name": "code-execution-path",
+      "category": "Code understanding",
+      "summary": "Trace a task through a concise chain of linked execution steps.",
+      "example": "Use $code-execution-path to trace what happens when a user submits this form.",
+      "dependencies": [],
+      "runtime": null
+    },
+    {
+      "name": "idea-council-agent",
+      "category": "Thinking",
+      "summary": "Evaluate an idea through four sequential expert gates.",
+      "example": "Use $idea-council-agent to evaluate this project idea before I build it.",
+      "dependencies": [],
+      "runtime": null
+    },
+    {
+      "name": "interviewer-agent",
+      "category": "Learning",
+      "summary": "Practise concept-first interviews with bounded transfer probes and saved feedback.",
+      "example": "Use $interviewer-agent for a backend engineering interview based on this project.",
+      "dependencies": [],
+      "runtime": null
+    },
+    {
+      "name": "language-tutor",
+      "category": "Learning",
+      "summary": "Build and resume a spoken-language course with practice and assessments.",
+      "example": "Use $language-tutor to plan a beginner spoken Spanish course.",
+      "dependencies": [
+        "personal-context"
+      ],
+      "runtime": null
+    },
+    {
+      "name": "personal-context",
+      "category": "Learning",
+      "summary": "Manage a shared personal profile through exact proposals and explicit approval.",
+      "example": "Use $personal-context to show the keys in my approved profile.",
+      "dependencies": [],
+      "runtime": "learning"
+    },
+    {
+      "name": "reading-agent",
+      "category": "Learning",
+      "summary": "Read supplied books or passages in source-grounded parts with checkpoints.",
+      "example": "Use $reading-agent to read this PDF with me, one chapter at a time.",
+      "dependencies": [
+        "personal-context"
+      ],
+      "runtime": "learning"
+    },
+    {
+      "name": "self-help-agent",
+      "category": "Thinking",
+      "summary": "Offer explicitly requested, research-informed supportive conversation.",
+      "example": "Use $self-help-agent to help me think through a recurring frustration.",
+      "dependencies": [],
+      "runtime": null
+    },
+    {
+      "name": "structure-map",
+      "category": "Code understanding",
+      "summary": "Map a library's main abstractions and everyday entry points.",
+      "example": "Use $structure-map to show how scikit-learn is organized.",
+      "dependencies": [],
+      "runtime": null
+    },
+    {
+      "name": "student-agent",
+      "category": "Learning",
+      "summary": "Practise learning by teaching a curious student who probes your explanation.",
+      "example": "Use $student-agent. I will explain database indexes; ask about gaps in my reasoning.",
+      "dependencies": [],
+      "runtime": null
+    },
+    {
+      "name": "tutor-code-file",
+      "category": "Code understanding",
+      "summary": "Explain one code file through its purpose, structure, and execution flow.",
+      "example": "Use $tutor-code-file to explain this file and its important dependencies.",
+      "dependencies": [],
+      "runtime": null
+    },
+    {
+      "name": "tutor-codebase",
+      "category": "Learning",
+      "summary": "Teach transferable engineering concepts from real code and preserve completed lessons.",
+      "example": "Use $tutor-codebase to teach the concepts behind this repository.",
+      "dependencies": [
+        "personal-context"
+      ],
+      "runtime": null
+    },
+    {
+      "name": "tutor-plain-language",
+      "category": "Code understanding",
+      "summary": "Explain a bounded piece of code or prose in clear, concrete language.",
+      "example": "Use $tutor-plain-language to explain this function with a tiny example.",
+      "dependencies": [],
+      "runtime": null
+    },
+    {
+      "name": "tutor-source-grounded",
+      "category": "Learning",
+      "summary": "Build a persistent evidence base, teach from approved sources, and assess understanding.",
+      "example": "Use $tutor-source-grounded to plan a course on computer networking.",
+      "dependencies": [
+        "personal-context"
+      ],
+      "runtime": "learning"
+    },
+    {
+      "name": "tutor-visual",
+      "category": "Code understanding",
+      "summary": "Explain code, architecture, and data flow with grounded visualizations.",
+      "example": "Use $tutor-visual to show how data moves through this service.",
+      "dependencies": [],
+      "runtime": null
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Plain-Language Tutor"
+  short_description: "Explain selected material in plain language"
+  default_prompt: "Use $tutor-plain-language to explain this selected material in plain language, calibrating the depth and terminology to what I already know."
+
+policy:
+  allow_implicit_invocation: false

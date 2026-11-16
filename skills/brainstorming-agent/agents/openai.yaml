@@ -1,0 +1,7 @@
+interface:
+  display_name: "Brainstorming Agent"
+  short_description: "Explore and pressure-test ideas independently"
+  default_prompt: "Use $brainstorming-agent to explore this idea with me, form an independent view, challenge assumptions, and maintain continuity across the conversation."
+
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Code Execution Path"
+  short_description: "Map a task to linked execution steps"
+  default_prompt: "Use $code-execution-path to show the execution chain for this task."
+
+policy:
+  allow_implicit_invocation: false

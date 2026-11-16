@@ -1,0 +1,6 @@
+interface:
+  display_name: "Reading Agent"
+  short_description: "Read supplied chapters thoroughly, in clear parts"
+  default_prompt: "Use $reading-agent to prepare my supplied text or PDF as Markdown and explain the complete requested chapter in clear parts, tracking every substantive section without assignments or source discovery."
+policy:
+  allow_implicit_invocation: false

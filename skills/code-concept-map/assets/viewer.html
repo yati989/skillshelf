@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Repository concept map</title>
+<style>
+:root { color-scheme:light; --bg:#f5f6f2; --surface:#fff; --ink:#202c2a; --muted:#61706b; --line:#dce3dc; --accent:#155f50; --soft:#e7f0e9; --code:#eff3ef; --warning:#865817; }
+@media(prefers-color-scheme:dark) { :root { color-scheme:dark; --bg:#161d1b; --surface:#1e2724; --ink:#e5ece6; --muted:#a6b8ad; --line:#3b4a42; --accent:#9dd6b9; --soft:#2a3f34; --code:#151d19; --warning:#ebc17d; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+button,input { font:inherit; }
+button { cursor:pointer; color:inherit; }
+button:disabled { cursor:default; opacity:.5; }
+button:focus-visible,input:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+button { border:1px solid var(--line); background:var(--surface); border-radius:7px; padding:8px 13px; }
+button:hover:not(:disabled) { background:var(--soft); }
+button.primary { background:var(--accent); color:var(--surface); border-color:var(--accent); }
+@media(prefers-color-scheme:dark) { button.primary { color:var(--bg); } }
+[hidden] { display:none !important; }
+.shell { max-width:1240px; margin:auto; padding:38px 40px 26px; }
+.masthead { display:flex; justify-content:space-between; align-items:flex-start; gap:24px; margin-bottom:26px; }
+.eyebrow { font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:var(--accent); font-weight:650; margin:0 0 10px; }
+h1 { font-size:clamp(27px,4vw,40px); line-height:1.15; letter-spacing:-.035em; font-weight:620; margin:0 0 12px; }
+h2 { margin:0 0 14px; font-size:27px; line-height:1.25; letter-spacing:-.02em; }
+h3 { font-size:12px; text-transform:uppercase; letter-spacing:.085em; color:var(--muted); margin:26px 0 9px; }
+p { margin:0 0 14px; }
+.muted { color:var(--muted); }
+.repo-line { color:var(--muted); font-size:14px; margin:0; overflow-wrap:anywhere; }
+.actions { display:flex; flex-wrap:wrap; gap:8px; padding-top:8px; }
+.workspace { display:grid; grid-template-columns:minmax(300px,.85fr) minmax(0,1.15fr); border:1px solid var(--line); border-radius:14px; background:var(--surface); overflow:hidden; }
+.tree-pane { padding:24px; min-width:0; border-right:1px solid var(--line); }
+.tree-caption { display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:14px; }
+.tree-caption h2 { font-size:17px; margin:0; letter-spacing:0; }
+.count { font-size:12px; color:var(--muted); }
+.search { display:block; width:100%; border:1px solid var(--line); border-radius:8px; color:var(--ink); background:var(--bg); padding:10px 12px; }
+.search-label { display:block; font-size:12px; color:var(--muted); margin-bottom:5px; }
+.tree-tools { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0 8px; }
+.tree-tools button { padding:4px 7px; font-size:12px; border-color:transparent; background:transparent; }
+.hint { font-size:12px; color:var(--muted); }
+#search-status { min-height:19px; font-size:12px; color:var(--muted); margin:0 0 10px; }
+.tree,.branch { list-style:none; padding:0; margin:0; }
+.tree > li { margin-bottom:10px; }
+.branch { margin:2px 0 4px 15px; padding-left:13px; border-left:1px solid var(--line); }
+.node-row { display:flex; align-items:center; gap:5px; min-height:41px; border-radius:7px; position:relative; }
+.branch > li > .node-row::before { content:""; position:absolute; left:-14px; width:10px; height:1px; background:var(--line); }
+.node-row.selected { background:var(--soft); }
+.toggle { flex:0 0 27px; width:27px; height:27px; line-height:1; padding:0; font-size:18px; border-radius:5px; }
+.leaf-dot { flex:0 0 27px; text-align:center; color:var(--muted); font-size:15px; }
+.learn-check { flex:0 0 auto; width:18px; height:18px; margin:0 3px; accent-color:var(--accent); cursor:pointer; }
+.node-label { flex:1; text-align:left; padding:8px 5px; background:transparent; border:0; min-width:0; overflow-wrap:anywhere; font-size:14px; }
+.node-label[aria-pressed="true"] { color:var(--accent); font-weight:600; }
+.tree > li > .node-row > .node-label { font-weight:600; }
+.node-total { padding-right:8px; color:var(--muted); font-size:11px; }
+.match { text-decoration:underline; text-decoration-color:var(--accent); text-underline-offset:4px; }
+.detail { padding:30px 34px 36px; min-width:0; }
+.breadcrumb { display:flex; flex-wrap:wrap; align-items:center; gap:5px; color:var(--muted); font-size:12px; margin-bottom:22px; }
+.breadcrumb button { padding:0; border:0; background:transparent; border-radius:2px; color:var(--muted); font-size:12px; }
+.definition { font-size:17px; line-height:1.65; }
+.status-label { color:var(--accent); font-size:11px; text-transform:uppercase; letter-spacing:.07em; margin-bottom:12px; }
+.status-label.inferred { color:var(--warning); }
+.evidence { margin:14px 0 22px; }
+.citation { font:12px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace; color:var(--accent); overflow-wrap:anywhere; margin-bottom:8px; }
+.evidence-note { font-size:13px; color:var(--muted); margin-bottom:8px; }
+pre { background:var(--code); padding:14px 16px; border-radius:7px; margin:0; white-space:pre-wrap; overflow-wrap:anywhere; font:12px/1.8 ui-monospace,SFMono-Regular,Consolas,monospace; tab-size:4; }
+.code-line { display:block; }
+.line-no { display:inline-block; min-width:3ch; margin-right:1.5ch; user-select:none; color:var(--muted); }
+.link-list { list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:8px; }
+.link-list button { font-size:13px; }
+.scope-list { padding-left:18px; font-size:13px; color:var(--muted); overflow-wrap:anywhere; }
+.divider { height:1px; background:var(--line); margin:25px 0; }
+.overview-mark { font-size:32px; color:var(--accent); line-height:1; margin:0 0 18px; }
+.progress-wrap { margin:20px 0 24px; }
+.progress-wrap progress { display:block; width:100%; height:12px; margin:7px 0 5px; accent-color:var(--accent); }
+.progress-label { font-size:13px; color:var(--muted); }
+.footer { display:flex; flex-wrap:wrap; gap:8px 24px; justify-content:space-between; margin-top:16px; font-size:12px; color:var(--muted); }
+#notice { color:var(--accent); min-height:20px; }
+@media(max-width:760px) { .shell { padding:25px 18px; } .masthead { flex-direction:column; gap:8px; } .workspace { grid-template-columns:1fr; } .tree-pane { border-right:0; border-bottom:1px solid var(--line); padding:20px; } .detail { padding:24px 20px; } .branch { margin-left:12px; padding-left:11px; } .branch > li > .node-row::before { left:-12px; width:8px; } }
+@media(pointer:coarse) { button { min-height:44px; } .toggle,.leaf-dot { flex-basis:36px; width:36px; } .node-row { gap:2px; } .search { font-size:16px; } }
+@media print { body { background:white; color:black; } .shell { padding:0; } .actions,.search-label,.search,.tree-tools,#notice { display:none; } .workspace { display:block; } .tree-pane { border:0; } .detail { border-top:1px solid gray; } }
+</style>
+</head>
+<body>
+<div class="shell">
+  <header class="masthead">
+    <div><p class="eyebrow">Repository concept map</p><h1>Inside the code</h1><p class="repo-line" id="repo-line"></p></div>
+    <div class="actions"><button type="button" id="export">Export JSON</button><button type="button" class="primary" id="save">Save HTML</button></div>
+  </header>
+  <main class="workspace">
+    <nav class="tree-pane" aria-label="Concept hierarchy">
+      <div class="tree-caption"><h2>Explore concepts</h2><span class="count" id="total"></span></div>
+      <label class="search-label" for="search">Find a concept or source file</label>
+      <input class="search" id="search" type="search" placeholder="Try generators, testing, HTTP…" autocomplete="off">
+      <div class="tree-tools"><button id="expand" type="button">Expand all</button><button id="collapse" type="button">Collapse all</button><button id="clear" type="button" hidden>Clear search</button><button id="overview" type="button">Overview</button></div>
+      <p class="hint">Click + to unfold, a name to explore, or a checkbox to mark a concept learned.</p>
+      <p id="search-status" role="status" aria-live="polite"></p>
+      <ul class="tree" id="tree"></ul>
+    </nav>
+    <article class="detail" id="detail" aria-label="Concept details" aria-live="polite"></article>
+  </main>
+  <footer class="footer"><span>Offline snapshot · Save HTML keeps your current view and learning progress.</span><span id="snapshot"></span></footer>
+  <p id="notice" role="status" aria-live="polite"></p>
+</div>
+<noscript>Enable JavaScript to expand the concept tree. The companion JSON contains the full map.</noscript>
+<script id="map-data" type="application/json">__CONCEPT_MAP_DATA__</script>
+<script id="map-state" type="application/json">{}</script>
+<script>
+(() => {
+  'use strict';
+  const data = JSON.parse(document.getElementById('map-data').textContent);
+  const embedded = JSON.parse(document.getElementById('map-state').textContent);
+  const byId = new Map(), parents = new Map(), counts = new Map();
+  function index(node, parent) {
+    byId.set(node.id, node); parents.set(node.id, parent);
+    let count = node.kind === 'concept' ? 1 : 0;
+    for (const child of node.children) count += index(child, node.id);
+    counts.set(node.id, count); return count;
+  }
+  const total = data.nodes.reduce((sum,node) => sum + index(node,null),0);
+  const key = 'code-concept-map:' + data.map_id + ':' + (embedded.view_id || 'original');
+  let remembered = null;
+  try { remembered = JSON.parse(localStorage.getItem(key)); } catch (_) {}
+  const initial = remembered && typeof remembered === 'object' ? remembered : embedded;
+  const state = {
+    expanded:new Set((Array.isArray(initial.expanded) ? initial.expanded : []).filter(id => byId.has(id))),
+    selected:byId.has(initial.selected) ? initial.selected : null,
+    query:typeof initial.query === 'string' ? initial.query : '',
+    learned:new Set((Array.isArray(initial.learned) ? initial.learned : []).filter(id => byId.get(id)?.kind === 'concept'))
+  };
+  const tree = document.getElementById('tree'), detail = document.getElementById('detail');
+  const search = document.getElementById('search');
+  const el = (tag, text, cls) => {
+    const item = document.createElement(tag);
+    if (text !== undefined) item.textContent = text;
+    if (cls) item.className = cls;
+    return item;
+  };
+  function button(text, action, cls) {
+    const item = el('button',text,cls); item.type='button'; item.addEventListener('click',action); return item;
+  }
+  function current() { return {expanded:[...state.expanded],selected:state.selected,query:state.query,learned:[...state.learned]}; }
+  function remember() { try { localStorage.setItem(key,JSON.stringify(current())); } catch (_) {} }
+  function pathTo(id) {
+    const path=[]; while(id) { path.unshift(id); id=parents.get(id); } return path;
+  }
+  function select(id, reveal=false) {
+    state.selected=id;
+    if (reveal) {
+      state.query=''; search.value='';
+      for (const parent of pathTo(id).slice(0,-1)) state.expanded.add(parent);
+    }
+    remember(); renderTree(); renderDetail();
+  }
+  function renderTree() {
+    const focused = document.activeElement?.dataset?.focusKey;
+    tree.replaceChildren();
+    const q = state.query.trim().toLocaleLowerCase();
+    const matches = new Set(), visible = new Set();
+    if(q) for(const node of byId.values()) {
+      const haystack=[node.label,node.summary,node.usage || '',...node.evidence.map(e => e.path+' '+e.note)].join(' ').toLocaleLowerCase();
+      if(haystack.includes(q)) { matches.add(node.id); pathTo(node.id).forEach(id => visible.add(id)); }
+    }
+    document.getElementById('search-status').textContent=q ? `${matches.size} matching ${matches.size===1?'concept or category':'concepts or categories'}` : '';
+    document.getElementById('clear').hidden=!q;
+    document.getElementById('expand').disabled=!!q;
+    document.getElementById('collapse').disabled=!!q;
+    function add(node,list) {
+      if(q && !visible.has(node.id)) return;
+      const item=el('li'), row=el('div',undefined,'node-row'+(state.selected===node.id?' selected':''));
+      const children=node.children.filter(n => !q || visible.has(n.id));
+      const opened=q ? children.length>0 : state.expanded.has(node.id);
+      if(children.length) {
+        const toggle=button(opened?'−':'+',() => {
+          if(state.expanded.has(node.id)) state.expanded.delete(node.id); else state.expanded.add(node.id);
+          remember(); renderTree();
+        },'toggle');
+        toggle.setAttribute('aria-label',(opened?'Collapse ':'Expand ')+node.label);
+        toggle.setAttribute('aria-expanded',String(opened)); toggle.setAttribute('aria-controls','children-'+node.id);
+        toggle.dataset.focusKey='toggle-'+node.id; toggle.disabled=!!q;
+        row.append(toggle);
+      } else row.append(el('span','·','leaf-dot'));
+      if(node.kind === 'concept') {
+        const check=el('input',undefined,'learn-check'); check.type='checkbox'; check.checked=state.learned.has(node.id);
+        check.setAttribute('aria-label',(check.checked?'Mark as not learned: ':'Mark as learned: ')+node.label);
+        check.addEventListener('change',()=> {
+          if(check.checked) state.learned.add(node.id); else state.learned.delete(node.id);
+          remember(); renderTree(); renderDetail();
+        });
+        row.append(check);
+      }
+      const label=button(node.label,() => select(node.id),'node-label'+(matches.has(node.id)?' match':''));
+      label.setAttribute('aria-pressed',String(state.selected===node.id)); label.dataset.focusKey='label-'+node.id;
+      row.append(label);
+      if(node.children.length) {
+        let learned=0;
+        for(const id of state.learned) if(pathTo(id).includes(node.id)) learned++;
+        row.append(el('span',`${learned}/${counts.get(node.id)}`,'node-total'));
+      }
+      item.append(row);
+      if(children.length) {
+        const branch=el('ul',undefined,'branch'); branch.id='children-'+node.id; branch.hidden=!opened;
+        // Only build opened branches; keep the controlled container for accessibility.
+        if(opened) children.forEach(child => add(child,branch));
+        item.append(branch);
+      }
+      list.append(item);
+    }
+    data.nodes.forEach(node => add(node,tree));
+    if(q && !matches.size) tree.append(el('li','No matches. Try a broader term or a file name.','muted'));
+    if(focused) [...tree.querySelectorAll('[data-focus-key]')].find(e => e.dataset.focusKey===focused)?.focus();
+  }
+  function links(nodes) {
+    const list=el('ul',undefined,'link-list');
+    for(const node of nodes) { const item=el('li'); item.append(button(node.label,()=>select(node.id,true))); list.append(item); }
+    return list;
+  }
+  function scope(title,items) {
+    if(!items.length) return;
+    detail.append(el('h3',title)); const list=el('ul',undefined,'scope-list');
+    items.forEach(item=>list.append(el('li',item))); detail.append(list);
+  }
+  function renderDetail() {
+    detail.replaceChildren();
+    if(!state.selected) {
+      detail.append(el('p','↳','overview-mark'),el('p','A learning map of your repository','eyebrow'),el('h2',data.repository.name),el('p',data.repository.summary,'definition'));
+      const progress=el('div',undefined,'progress-wrap'), meter=el('progress'); meter.max=total; meter.value=state.learned.size;
+      progress.append(el('p','Learning progress','eyebrow'),meter,el('p',`${state.learned.size} of ${total} concepts marked learned.`,'progress-label'));
+      detail.append(progress,el('p',`${total} concepts across ${data.nodes.length} broad categories. Start with a category and follow its branches into the details.`,'muted'),links(data.nodes));
+      detail.append(el('div',undefined,'divider'),el('h3','Inspection scope'),el('p',data.coverage.summary));
+      scope('Inspected',data.coverage.inspected); scope('Excluded',data.coverage.excluded); scope('Known gaps',data.coverage.gaps);
+      detail.append(el('p','This map reflects the inspected snapshot. Ask Codex to update it when the repository changes.','hint'));
+      return;
+    }
+    const node=byId.get(state.selected), crumb=el('div',undefined,'breadcrumb');
+    crumb.append(button('Overview',()=>select(null)));
+    pathTo(node.id).forEach(id=>{ crumb.append(el('span','/')); crumb.append(button(byId.get(id).label,()=>select(id,true))); });
+    detail.append(crumb);
+    detail.append(el('p',node.kind==='category'?'Concept family':node.confidence==='inferred'?'Inferred from the code':'Observed in the repository','status-label'+(node.confidence==='inferred'?' inferred':'')));
+    detail.append(el('h2',node.label),el('p',node.summary,'definition'));
+    if(node.kind === 'concept') {
+      const learned=state.learned.has(node.id), check=el('input'); check.type='checkbox'; check.checked=learned; check.id='detail-learned';
+      const label=el('label',learned?' Learned':' Mark as learned','progress-label'); label.htmlFor=check.id;
+      check.addEventListener('change',()=> { if(check.checked) state.learned.add(node.id); else state.learned.delete(node.id); remember(); renderTree(); renderDetail(); });
+      const progress=el('p',undefined,'progress-wrap'); progress.append(check,label); detail.append(progress);
+    }
+    if(node.usage) detail.append(el('h3','How it is used here'),el('p',node.usage));
+    if(node.evidence.length) detail.append(el('h3','In the code'));
+    for(const evidence of node.evidence) {
+      const section=el('section',undefined,'evidence');
+      const range=evidence.start===evidence.end?String(evidence.start):`${evidence.start}–${evidence.end}`;
+      section.append(el('p',`${evidence.path}:${range}`,'citation'),el('p',evidence.note,'evidence-note'));
+      if(evidence.redacted) section.append(el('p','Excerpt omitted; see the cited source.','hint'));
+      else {
+        const pre=el('pre'),code=el('code');
+        evidence.snippet.split('\n').forEach((line,i)=> {
+          const row=el('span',undefined,'code-line'), number=el('span',String(evidence.start+i),'line-no');
+          number.setAttribute('aria-hidden','true'); row.append(number,document.createTextNode(line || ' ')); code.append(row);
+        });
+        pre.append(code); section.append(pre);
+      }
+      detail.append(section);
+    }
+    if(node.children.length) detail.append(el('h3','Explore deeper'),links(node.children));
+    if(node.related.length) detail.append(el('h3','Related concepts'),links(node.related.map(id=>byId.get(id))));
+  }
+  function download(content,type,filename) {
+    const url=URL.createObjectURL(new Blob([content],{type}));
+    const anchor=el('a'); anchor.href=url; anchor.download=filename; anchor.hidden=true;
+    document.body.append(anchor); anchor.click(); anchor.remove(); setTimeout(()=>URL.revokeObjectURL(url),10000);
+  }
+  const filename=data.repository.name.toLowerCase().replace(/[^a-z0-9-]+/g,'-').replace(/^-+|-+$/g,'') || 'repository';
+  document.getElementById('export').addEventListener('click',()=> {
+    download(JSON.stringify(data,null,2)+'\n','application/json',filename+'-concept-map.json');
+    document.getElementById('notice').textContent='JSON download requested. You can give it to Codex to update the map.';
+  });
+  document.getElementById('save').addEventListener('click',()=> {
+    const copy=document.documentElement.cloneNode(true);
+    const snapshot={...current(),view_id:Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,8)};
+    copy.querySelector('#map-state').textContent=JSON.stringify(snapshot).replace(/</g,'\\u003c');
+    copy.querySelector('#notice').textContent='';
+    download('<!doctype html>\n'+copy.outerHTML,'text/html',filename+'-concept-map.html');
+    document.getElementById('notice').textContent='HTML download requested. The saved copy includes this view and works offline.';
+  });
+  search.value=state.query;
+  search.addEventListener('input',()=> { state.query=search.value; remember(); renderTree(); });
+  search.addEventListener('keydown',event=> { if(event.key==='Escape') { state.query=''; search.value=''; remember(); renderTree(); } });
+  document.getElementById('clear').addEventListener('click',()=> { state.query=''; search.value=''; remember(); renderTree(); search.focus(); });
+  document.getElementById('expand').addEventListener('click',()=> { byId.forEach(node=> {if(node.children.length)state.expanded.add(node.id);}); remember();renderTree(); });
+  document.getElementById('collapse').addEventListener('click',()=> { state.expanded.clear();remember();renderTree(); });
+  document.getElementById('overview').addEventListener('click',()=>select(null));
+  document.getElementById('repo-line').textContent=data.repository.name+' · '+data.repository.revision;
+  document.getElementById('total').textContent=total+' concepts';
+  document.getElementById('snapshot').textContent='Created '+data.generated_at.slice(0,10);
+  document.title=data.repository.name+' — Concept map';
+  renderTree(); renderDetail();
+})();
+</script>
+</body>
+</html>

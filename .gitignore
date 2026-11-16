@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+.DS_Store
+.kb-workspace/
+.env
+.env.*
+project.json
+.job-atlas-managed.json
+build/
+dist/

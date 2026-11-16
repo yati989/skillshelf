@@ -1,0 +1,6 @@
+interface:
+  display_name: "Self help Agent"
+  short_description: "Explore feelings and patterns with research-informed support"
+  default_prompt: "Use $self-help-agent to talk through what I am experiencing, consult relevant research in the background, and help me understand what might help."
+policy:
+  allow_implicit_invocation: false

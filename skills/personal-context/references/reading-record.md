@@ -1,0 +1,11 @@
+# Shared reading record
+
+Use the reader's existing book register when one is configured. Otherwise, with their agreement, keep a single register at `~/.local/share/skillshelf/reading-record.md`. Reuse that file across reading and teaching workflows; do not create a separate register for each subject or workspace. This is an attributed reading/evidence log, not a competing personal profile.
+
+At the end-of-lesson Global Personal Profile review, and at Reading Agent's chapter/book closure review, check whether the reviewed discussion supports adding or updating a book row. Add a completed-book row only when the user reports finishing the book or the actual reading checkpoints establish whole-book completion. A completed lesson or chapter alone does not establish book completion. If there is no relevant new book information, leave the register unchanged.
+
+At whole-book completion, add or update the row and invite a brief overall reaction if the user has not supplied one: how much they liked it, why, and which ideas stayed with them. Feedback is optional and does not delay recording verified completion. At later reviews, incorporate newly supplied reactions, useful familiar concepts/examples, and explicit agreement or disagreement into the same row. Preserve provenance, leave unknown details blank, and do not invent a completion date from the date it was reported.
+
+Read the existing register before editing. Keep one row per work unless editions or rereads materially differ. Record direct user reports and verified reading outcomes when the reader has requested maintaining this log; do not require repeated approval for those routine entries. Proposed durable interpretations about beliefs, personality, or learning preferences still follow the separate exact-wording profile approval process. Honor any current request not to save, and report a failed write without claiming success.
+
+When teaching, consult only relevant rows to connect new material to familiar ideas and examples, giving particular weight to the user's positive feedback. Treat completion as a starting assumption of familiarity, not proof of mastery or endorsement. Make the mapping explicit and explain its limits when needed; do not force a book connection into every explanation. Announce briefly what was added or updated at closure.

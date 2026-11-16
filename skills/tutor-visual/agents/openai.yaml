@@ -1,0 +1,7 @@
+interface:
+  display_name: "Visual Tutor"
+  short_description: "Explain code and concepts with focused diagrams"
+  default_prompt: "Use $tutor-visual to inspect the relevant code and visually explain the important relationships with the most appropriate diagram."
+
+policy:
+  allow_implicit_invocation: false

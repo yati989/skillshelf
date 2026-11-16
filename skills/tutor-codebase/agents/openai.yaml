@@ -1,0 +1,7 @@
+interface:
+  display_name: "Codebase Tutor"
+  short_description: "Learn software fundamentals from repository evidence"
+  default_prompt: "Use $tutor-codebase to teach the high-leverage software-engineering principles behind this code in plain language; answer my follow-ups and wait for Done before writing to my book and testing me."
+
+policy:
+  allow_implicit_invocation: false
